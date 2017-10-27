@@ -8,9 +8,6 @@ var config = {
   resolve: {
     extensions: ['.ts', '.js', '.json', '.css', '.html']
   },
-  resolveLoader: {
-    modules: [path.join(__dirname, 'node_modules')]
-  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: "map.umd.js",
