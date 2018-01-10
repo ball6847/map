@@ -20,7 +20,8 @@
     "test:start": "forever start --silent node_modules/.bin/webpack-dev-server --quiet --port 9239 --content-base app --config app/webpack.config",
     "test:stop": "forever stop node_modules/.bin/webpack-dev-server --quiet --port 9239 --content-base app --config app/webpack.config",
     "test:webtest": "webtest webtest.txt",
-    "upgrade": "npm-check-updates -a/--upgradeAll && npm i"
+    "upgrade": "npm-check-updates -a/--upgradeAll && npm i",
+    "publish:github": "npm run build && cp package.json ./dist/ && gh-pages --dist ./dist --branch npmjs"
   },
   "repository": {
     "type": "git",
