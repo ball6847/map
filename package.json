@@ -21,7 +21,8 @@
     "test:stop": "forever stop node_modules/.bin/webpack-dev-server --quiet --port 9239 --content-base app --config app/webpack.config",
     "test:webtest": "webtest webtest.txt",
     "upgrade": "npm-check-updates -a/--upgradeAll && npm i",
-    "publish:github": "npm run build && cp package.json ./dist/ && gh-pages --dist ./dist --branch npmjs"
+    "copy-packagejson": "cp package.json ./dist/ && sed -i 's/\"dist/\"./g' ./dist/package.json",
+    "publish:github": "npm run copy-packagejson && gh-pages --dist ./dist --branch npmjs"
   },
   "repository": {
     "type": "git",
